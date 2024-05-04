@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 body{
-	background: url('images/background-pattern-desktop.jpeg') no-repeat top center fixed;
+	background: url('images/background-pattern-desktop.svg') no-repeat top center fixed;
 	background-attachment: cover;
 	background-color: hsl(275, 100%, 97%);
 	background-size: auto 45%;

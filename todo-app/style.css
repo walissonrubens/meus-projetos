@@ -12,7 +12,7 @@
 }
 
 body {
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: rgba(78, 78, 78, 0.7);
 }
 
 #todo-container {

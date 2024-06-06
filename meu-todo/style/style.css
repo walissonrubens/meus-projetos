@@ -17,7 +17,18 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 100px 0;
+    width: 800px;
+    border-radius: 10px;
+    margin: 40px auto;
+    padding: 130px 0;
+    transition: .8s;
+    overflow: hidden;
+}
+
+.container:hover{
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.404);
+    transform: scale(1.05);
+
 }
 
 input{
@@ -54,6 +65,7 @@ button{
     font-size: 20px;
     cursor: pointer;
     transition: .4s;
+    animation: btnSlide .6s ease-in-out;
 }
 
 button:hover{
@@ -95,12 +107,14 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgba(255, 255, 255, 0.171);
+    border: 1px solid rgba(255, 255, 255, 0.459);
+    position: relative;
     border-radius: 10px;
     padding: 10px;
     margin: 7px 0;
     width: 500px;
     transition: .3s;
+    animation: todoSlide .6s ease-in-out;
 }
 
 .todo:hover{
@@ -134,4 +148,28 @@ button:hover{
 
 .hide{
     display: none;
+}
+
+/* Keyframes */
+
+@keyframes todoSlide{
+    from{
+        width: 0px;
+        color: black;
+        border: 1px solid black;
+    }
+
+    to{
+        width: 500px;
+    }
+}
+
+@keyframes btnSlide{
+    from{
+        color: black;
+    }
+
+    to{
+        color: white;
+    }
 }

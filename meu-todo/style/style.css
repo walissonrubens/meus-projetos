@@ -1,18 +1,18 @@
 /* GERAL */
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
     background-color: black;
     color: rgba(255, 255, 255);
 }
 
-.container{
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,13 +25,13 @@ body{
     overflow: hidden;
 }
 
-.container:hover{
+.container:hover {
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.404);
     transform: scale(1.05);
 
 }
 
-input{
+input {
     background-color: transparent;
     margin: 10px 0;
     color: white;
@@ -42,17 +42,17 @@ input{
     transition: .2s;
 }
 
-input::placeholder{
+input::placeholder {
     text-align: center;
 }
 
-input:hover{
+input:hover {
     box-shadow: 0px 0px 10px rgb(189, 189, 189);
     transform: scale(1.05);
 }
 
 
-button{
+button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +68,7 @@ button{
     animation: btnSlide .6s ease-in-out;
 }
 
-button:hover{
+button:hover {
     transform: scale(1.05);
     background-color: rgb(255, 255, 255);
     color: black;
@@ -77,7 +77,7 @@ button:hover{
 
 /* Todo container */
 
-.todo-container{
+.todo-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,7 +85,7 @@ button:hover{
     gap: 20px;
 }
 
-.todo-container .todo-input{
+.todo-container .todo-input {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,7 +93,7 @@ button:hover{
     gap: 5px;
 }
 
-.container .todo-container h1{
+.container .todo-container h1 {
     font-size: 40px;
     display: flex;
     align-items: center;
@@ -103,7 +103,7 @@ button:hover{
 
 /* ToDo */
 
-.todo{
+.todo {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -117,59 +117,198 @@ button:hover{
     animation: todoSlide .6s ease-in-out;
 }
 
-.todo:hover{
+.todo:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.500);
 }
 
-.todo h3{
+.todo h3 {
     font-weight: 300;
 }
 
-.buttons{
+.buttons {
     display: flex;
     gap: 10px;
 }
 
-.check{
+.check {
     text-decoration: line-through;
     color: rgba(172, 255, 47, 0.281);
     background-color: rgba(120, 177, 36, 0.1);
     border: 1px solid rgba(172, 255, 47, 0.481);
 }
 
-.checkBtn button{
+.checkBtn button {
     color: rgba(172, 255, 47, 0.581);
 }
 
-.checkBtn button:hover{
+.checkBtn button:hover {
     color: rgba(172, 255, 47);
 }
 
-.hide{
+.delAnimation {
+    animation: DelAnimation 700ms ease-in-out;
+    color: transparent;
+}
+
+.delAnimation button {
+    animation: btnDelAnimation 500ms ease-in-out;
+    color: transparent;
+}
+
+.hide {
     display: none;
 }
 
 /* Keyframes */
 
-@keyframes todoSlide{
-    from{
+@keyframes todoSlide {
+    from {
         width: 0px;
         color: black;
         border: 1px solid black;
     }
 
-    to{
+    to {
         width: 500px;
     }
 }
 
-@keyframes btnSlide{
-    from{
+@keyframes todoSlideMobile {
+    from {
+        width: 0px;
+        color: black;
+        border: 1px solid black;
+    }
+
+    to {
+        width: 250px;
+    }
+}
+
+@keyframes btnSlide {
+    from {
         color: black;
     }
 
-    to{
+    to {
         color: white;
+    }
+}
+
+@keyframes DelAnimation {
+    from {
+        border: 1px solid white;
+        color: white;
+        width: 500px;
+    }
+
+    to {
+        border: 1px solid red;
+        color: transparent;
+        width: 0px;
+    }
+}
+
+@keyframes DelAnimationMobile {
+    from {
+        border: 1px solid white;
+        color: white;
+        width: 250px;
+    }
+
+    to {
+        border: 1px solid red;
+        color: transparent;
+        width: 0px;
+    }
+}
+
+@keyframes btnDelAnimation {
+    from {
+        border: 1px solid white;
+        color: white;
+    }
+
+    to {
+        color: transparent;
+    }
+}
+
+/* Media query */
+
+@media screen and (max-width: 510px) {
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+    }
+
+    .todo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+    }
+
+    .container input {
+        width: 250px;
+    }
+
+    .todo-top .todo-container-title h1 {
+        font-size: 2rem;
+    }
+
+    .todo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 250px;
+        animation: todoSlideMobile .6s ease-in-out;
+    }
+
+    .todo h3{
+        font-size: 1rem;
+    }
+
+    .buttons{
+        display: flex;
+        gap: 10px;
+    }
+
+    .buttons button{
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+    
+    .check {
+        text-decoration: line-through;
+        color: rgba(172, 255, 47, 0.281);
+        background-color: rgba(120, 177, 36, 0.1);
+        border: 1px solid rgba(172, 255, 47, 0.481);
+    }
+    
+    .checkBtn button {
+        color: rgba(172, 255, 47, 0.581);
+    }
+    
+    .checkBtn button:hover {
+        color: rgba(172, 255, 47);
+    }
+    
+    .delAnimation {
+        animation: DelAnimationMobile 700ms ease-in-out;
+        color: transparent;
+    }
+    
+    .delAnimation button {
+        animation: btnDelAnimation 500ms ease-in-out;
+        color: transparent;
+    }
+    
+    .hide {
+        display: none;
     }
 }

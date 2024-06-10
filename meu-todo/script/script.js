@@ -1,13 +1,12 @@
 let addBtn = document.querySelector("#add_button")
 let input = document.querySelector("#input")
 let todoContainer = document.querySelector(".todo-container")
+let alertTxt = document.querySelector(".alert-txt")
 
 // Evento para adicionar tarefa clique
 addBtn.addEventListener("click", () => {
 
-    if (input.value == "") {
-        return alert("Digite algo") 
-    }
+    if(alert(alertTxt, input)) return
 
     let todoDiv = document.createElement("div")
     todoDiv.classList.add("todo")
@@ -35,9 +34,7 @@ addBtn.addEventListener("click", () => {
 input.addEventListener("keydown", (e) => {
 
     if (e.keyCode == 13) {
-        if (input.value == "") {
-            return alert("Digite algo")
-        }
+        if(alert(alertTxt, input)) return
 
         let todoDiv = document.createElement("div")
         todoDiv.classList.add("todo")
@@ -63,6 +60,22 @@ input.addEventListener("keydown", (e) => {
 
 // Funções
 
+function alert(alertEl, inputEl){
+    if (inputEl.value == "") {
+
+        alertEl.textContent = "Digite algo"
+        alertEl.style.color = "red"
+        alertEl.style.fontWeight = "200"
+        return true
+    }
+
+    if (alertEl && inputEl.value != "") {
+        alertEl.textContent = ""
+    }
+
+    return false
+}
+
 function buttons(btnContainer, todoDiv, container) {
     // Criar botões
     let btnCheck = document.createElement("button")
@@ -83,9 +96,15 @@ function buttons(btnContainer, todoDiv, container) {
         btnContainer.classList.toggle("checkBtn")
     })
 
-    btnDelete.addEventListener("click", (e)=>{
+    // Evento deletar tarefa
+    btnDelete.addEventListener("click", (e) => {
         let targetEl = e.currentTarget.closest(".todo")
-        targetEl.remove()
+        targetEl.classList.add("delAnimation")
+
+        setTimeout(() => {
+            targetEl.remove()
+        }, 700);
+        
     })
 
     // Evento do botão de edição
@@ -111,8 +130,12 @@ function buttons(btnContainer, todoDiv, container) {
         editBtnConfirm.innerHTML = '<i class="bi bi-check-circle"></i>'
         divContainer.appendChild(editBtnConfirm)
 
+        divContainer.appendChild(alertTxt) //Chamado do alert
+
         // Evento do botão para confirmar edição
         editBtnConfirm.addEventListener("click", () => {
+            if(alert(alertTxt, editInput)) return
+
             container.classList.remove("hide")
             targetText.textContent = editInput.value
             divContainer.classList.add("hide");
@@ -122,11 +145,13 @@ function buttons(btnContainer, todoDiv, container) {
 
         editInput.addEventListener("keydown", (e) => {
             if (e.key === "Enter") {
+                if(alert(alertTxt, editInput)) return
+
                 container.classList.remove("hide")
                 targetText.textContent = editInput.value
                 divContainer.classList.add("hide");
             }
         })
     })
-    
+
 }

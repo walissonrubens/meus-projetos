@@ -152,12 +152,28 @@ button:hover {
 }
 
 .delAnimation button {
-    animation: btnDelAnimation 500ms ease-in-out;
+    animation: btnDelAnimation .1s ease-in-out;
     color: transparent;
 }
 
 .hide {
     display: none;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+}
+
+footer a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.178);
+}
+
+footer a:hover{
+    color: rgba(255, 255, 255, 0.301);
 }
 
 /* Keyframes */

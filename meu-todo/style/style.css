@@ -152,7 +152,7 @@ button:hover {
 }
 
 .delAnimation button {
-    animation: btnDelAnimation .1s ease-in-out;
+    animation: btnDelAnimation 1ms ease;
     color: transparent;
 }
 
@@ -242,8 +242,7 @@ footer a:hover{
 
 @keyframes btnDelAnimation {
     from {
-        border: 1px solid white;
-        color: white;
+        color: rgba(255, 255, 255, 0.055);
     }
 
     to {
@@ -299,28 +298,13 @@ footer a:hover{
         font-size: 18px;
     }
     
-    .check {
-        text-decoration: line-through;
-        color: rgba(172, 255, 47, 0.281);
-        background-color: rgba(120, 177, 36, 0.1);
-        border: 1px solid rgba(172, 255, 47, 0.481);
-    }
-    
-    .checkBtn button {
-        color: rgba(172, 255, 47, 0.581);
-    }
-    
-    .checkBtn button:hover {
-        color: rgba(172, 255, 47);
-    }
-    
     .delAnimation {
         animation: DelAnimationMobile 700ms ease-in-out;
         color: transparent;
     }
     
     .delAnimation button {
-        animation: btnDelAnimation 500ms ease-in-out;
+        animation: btnDelAnimation 1ms ease;
         color: transparent;
     }
     

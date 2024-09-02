@@ -3,11 +3,29 @@ let input = document.querySelector("#input")
 let todoContainer = document.querySelector(".todo-container")
 let alertTxt = document.querySelector(".alert-txt")
 
-// Evento para adicionar tarefa clique
-addBtn.addEventListener("click", () => {
 
-    if(alert(alertTxt, input)) return
+// Funções
 
+function alert(alertEl, inputEl){
+    if (inputEl.value == "") {
+
+        alertEl.textContent = "Digite algo"
+        alertEl.style.color = "red"
+        alertEl.style.fontWeight = "200"
+        return true
+    }
+
+    if (alertEl && inputEl.value != "") {
+        alertEl.textContent = ""
+    }
+
+    return false
+}
+
+// Função criar tarefa
+
+function criarTarefa(){
+    
     let todoDiv = document.createElement("div")
     todoDiv.classList.add("todo")
     todoContainer.appendChild(todoDiv)
@@ -27,53 +45,6 @@ addBtn.addEventListener("click", () => {
     input.value = ""
 
     buttons(btnDiv, todoDiv, todoContainer)
-})
-
-// Evento para adiconar tarefa tecla enter
-
-input.addEventListener("keydown", (e) => {
-
-    if (e.keyCode == 13) {
-        if(alert(alertTxt, input)) return
-
-        let todoDiv = document.createElement("div")
-        todoDiv.classList.add("todo")
-        todoContainer.appendChild(todoDiv)
-
-        let titleDiv = document.createElement("div")
-        todoDiv.appendChild(titleDiv)
-        let todoText = document.createElement("h3")
-        titleDiv.appendChild(todoText)
-        titleDiv.classList.add("todo-title")
-
-        let btnDiv = document.createElement("div")
-        btnDiv.classList.add("buttons")
-        todoDiv.appendChild(btnDiv)
-
-
-        todoText.innerHTML = input.value
-        input.value = ""
-
-        buttons(btnDiv, todoDiv, todoContainer)
-    }
-})
-
-// Funções
-
-function alert(alertEl, inputEl){
-    if (inputEl.value == "") {
-
-        alertEl.textContent = "Digite algo"
-        alertEl.style.color = "red"
-        alertEl.style.fontWeight = "200"
-        return true
-    }
-
-    if (alertEl && inputEl.value != "") {
-        alertEl.textContent = ""
-    }
-
-    return false
 }
 
 function buttons(btnContainer, todoDiv, container) {
@@ -109,10 +80,14 @@ function buttons(btnContainer, todoDiv, container) {
 
     // Evento do botão de edição
     btnEdit.addEventListener("click", (e) => {
-        container.classList.add("hide")
+        
+        
 
         let targetEl = e.currentTarget.closest(".todo")
         let targetText = targetEl.querySelector(".todo-title h3")
+
+        if(targetEl.classList.contains("check")) return
+        container.classList.add("hide")
 
         let divContainer = document.createElement("div")
         divContainer.classList.add("container")
@@ -155,3 +130,21 @@ function buttons(btnContainer, todoDiv, container) {
     })
 
 }
+
+
+// Evento para adicionar tarefa clique
+addBtn.addEventListener("click", () => {
+
+    if(alert(alertTxt, input)) return
+    criarTarefa()
+})
+
+// Evento para adiconar tarefa tecla enter
+
+input.addEventListener("keydown", (e) => {
+
+    if (e.keyCode == 13) {
+        if(alert(alertTxt, input)) return
+        criarTarefa()
+    }
+})

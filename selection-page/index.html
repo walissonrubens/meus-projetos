@@ -1,55 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Selection</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img src="images/white-logo.png" alt="">
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Carros</li>
-                <li>Fale Conosco</li>
-            </ul>
-        </nav>
+      <img src="images/white-logo.png" alt="" />
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Carros</li>
+          <li>Fale Conosco</li>
+        </ul>
+      </nav>
     </header>
 
-    <section>
-        <div class="list">
-            <div class="item">
-                <div class="car-img">
-                    <img src="images/1.png" alt="">
-                </div> <!--Car img-->
-                <div class="content">
-                    <p class="car-info">Único dono</p>
-                    <h2>Porsche</h2>
-                    <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae adipisci tempora error, minima placeat ab ipsam est unde dolore impedit aliquid reprehenderit fuga sed vel minus dolorum fugit explicabo a.
-                    </p>
-                    <button class="information">
-                        Saiba Mais
-                    </button>
-                </div> <!--Conteudo-->
-            </div><!--Item-->
-        </div> <!--Lista-->
-
-        <div class="arrows">
-            <button><img src="images/arrow.png" alt=""></button>
-            <button><img src="images/arrow.png" alt=""></button>
+    <section class="container">
+      <div class="list">
+        <div class="item active">
+          <div class="car-img">
+            <img src="images/1.png" alt="" />
+          </div>
+          <!--Car img-->
+          <div class="content">
+            <p class="car-info">Único dono</p>
+            <h2>911 Turbo</h2>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repudiandae adipisci tempora error, minima placeat ab ipsam est
+              unde dolore impedit aliquid reprehenderit fuga sed vel minus
+              dolorum fugit explicabo a.
+            </p>
+            <button class="information">Saiba Mais</button>
+          </div>
+          <!--Conteudo-->
         </div>
+        <!--Item-->
 
-        <div class="indicators">
-            <div class="number">01</div>
-            <ul>
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="item">
+          <div class="car-img">
+            <img src="images/2.png" alt="" />
+          </div>
+          <!--Car img-->
+          <div class="content">
+            <p class="car-info">Único dono</p>
+            <h2>Ferrari</h2>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repudiandae adipisci tempora error, minima placeat ab ipsam est
+              unde dolore impedit aliquid reprehenderit fuga sed vel minus
+              dolorum fugit explicabo a.
+            </p>
+            <button class="information">Saiba Mais</button>
+          </div>
+          <!--Conteudo-->
         </div>
+        <!--Item-->
+
+        <div class="item">
+          <div class="car-img">
+            <img src="images/3.png" alt="" />
+          </div>
+          <!--Car img-->
+          <div class="content">
+            <p class="car-info">Único dono</p>
+            <h2>Lamborghini</h2>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repudiandae adipisci tempora error, minima placeat ab ipsam est
+              unde dolore impedit aliquid reprehenderit fuga sed vel minus
+              dolorum fugit explicabo a.
+            </p>
+            <button class="information">Saiba Mais</button>
+          </div>
+          <!--Conteudo-->
+        </div>
+        <!--Item-->
+      </div>
+      <!--Lista-->
+
+      <div class="arrows">
+        <button id="prev"><img src="images/arrow.png" alt="" /></button>
+        <button id="next"><img src="images/arrow.png" alt="" /></button>
+      </div>
+
+      <div class="indicators">
+        <div class="number">01</div>
+        <ul>
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
     </section>
-</body>
+
+    <script src="script.js"></script>
+  </body>
 </html>
